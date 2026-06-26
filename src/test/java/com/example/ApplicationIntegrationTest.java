@@ -1,5 +1,6 @@
 package com.example;
 
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @Testcontainers
-@SpringBootTest(properties = "spring.profiles.active=test")
+@AutoConfigureMockMvc
 
 public class ApplicationIntegrationTest {
 
