@@ -30,7 +30,7 @@ public class UserRepositoryTest {
 
     @Test
     void testSaveUser() {
-        User user = new User("Carlos", "carlos@example.com");
+        User user = new User("Carlos", "carlos@example.com", "123456789");
         User saved = userRepository.save(user);
 
         assertNotNull(saved.getId());
@@ -40,7 +40,7 @@ public class UserRepositoryTest {
 
     @Test
     void testFindById() {
-        User user = new User("Diana", "diana@example.com");
+        User user = new User("Diana", "diana@example.com", "987654321");
         User saved = userRepository.save(user);
 
         User found = userRepository.findById(saved.getId()).orElse(null);
@@ -51,8 +51,8 @@ public class UserRepositoryTest {
 
     @Test
     void testFindAll() {
-        userRepository.save(new User("User1", "user1@example.com"));
-        userRepository.save(new User("User2", "user2@example.com"));
+        userRepository.save(new User("User1", "user1@example.com", "111111111"));
+        userRepository.save(new User("User2", "user2@example.com", "222222222"));
 
         List<User> users = userRepository.findAll();
 
@@ -61,7 +61,7 @@ public class UserRepositoryTest {
 
     @Test
     void testDeleteUser() {
-        User user = new User("Eduardo", "edu@example.com");
+        User user = new User("Eduardo", "edu@example.com", "333333333");
         User saved = userRepository.save(user);
 
         userRepository.delete(saved);
