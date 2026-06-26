@@ -1,0 +1,9 @@
+{
+  "AutoStart": false,
+  "DisplayedOnboarding": true,
+  "EnableDockerAI": true,
+  "LastContainerdSnapshotterEnable": 1782433598,
+  "LicenseTermsVersion": 2,
+  "SettingsVersion": 44,
+  "UseContainerdSnapshotter": true
+}
