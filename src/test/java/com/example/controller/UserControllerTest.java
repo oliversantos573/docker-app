@@ -46,10 +46,10 @@ public class UserControllerTest {
     @Test
     void testCreateUser() throws Exception {
         String userJson = "{\"name\":\"Maria Silva\",\"email\":\"maria@example.com\"}";
-        
+
         mockMvc.perform(post("/api/users")
-                .contentType("application/json")
-                .content(userJson))
+                        .contentType("application/json")
+                        .content(userJson))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Maria Silva"))
                 .andExpect(jsonPath("$.email").value("maria@example.com"));
@@ -57,7 +57,7 @@ public class UserControllerTest {
 
     @Test
     void testGetUserById() throws Exception {
-        User user = new User("Pedro", "pedro@example.com");
+        User user = new User("Pedro", "pedro@example.com", "999999999");
         User saved = userRepository.save(user);
 
         mockMvc.perform(get("/api/users/" + saved.getId()))
@@ -74,8 +74,8 @@ public class UserControllerTest {
 
     @Test
     void testListUsersAfterCreate() throws Exception {
-        User user1 = new User("Ana", "ana@example.com");
-        User user2 = new User("Bruno", "bruno@example.com");
+        User user1 = new User("Ana", "ana@example.com", "111111111");
+        User user2 = new User("Bruno", "bruno@example.com", "222222222");
         userRepository.save(user1);
         userRepository.save(user2);
 
